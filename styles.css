@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+.policy-selector {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    padding: 0;
+    gap: 0;
+}
+
+.policy-btn {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.policy-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.policy-btn.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+    background: white;
+}
+
+.policy-content {
+    padding: 40px 30px;
+    min-height: 400px;
+}
+
+.policy-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.policy-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.policy-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.rules-container {
+    display: grid;
+    gap: 20px;
+}
+
+.rule {
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 5px solid #667eea;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.rule:hover {
+    background: #eef1ff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+    transform: translateX(5px);
+}
+
+.rule h3 {
+    color: #667eea;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.rule p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 25px 30px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .policy-content {
+        padding: 25px 20px;
+    }
+
+    .policy-selector {
+        flex-direction: column;
+    }
+
+    .policy-btn {
+        border-bottom: 3px solid #e9ecef;
+        border-right: none;
+    }
+
+    .policy-btn.active {
+        border-bottom-color: #667eea;
+        border-right: none;
+    }
+
+    .rule {
+        padding: 15px;
+    }
+
+    .rule h3 {
+        font-size: 1.1em;
+    }
+
+    .rule p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        border-radius: 0;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .policy-content {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .policy-section h2 {
+        font-size: 1.5em;
+    }
+
+    .intro-text {
+        font-size: 1em;
+    }
+
+    .rule {
+        padding: 12px;
+        border-left-width: 4px;
+    }
+}
